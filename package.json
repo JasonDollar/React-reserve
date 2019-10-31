@@ -22,6 +22,7 @@
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "semantic-ui-react": "^0.88.1",
+    "shortid": "^2.2.15",
     "validator": "^11.1.0"
   },
   "devDependencies": {
@@ -30,6 +31,7 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.15.1",
-    "eslint-plugin-react-hooks": "^2.1.2"
+    "eslint-plugin-react-hooks": "^2.1.2",
+    "mongoimport": "^1.0.6"
   }
 }

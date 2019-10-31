@@ -4,3 +4,4 @@ next.config.*
 now.json
 
 .gitconfig
+import.js
