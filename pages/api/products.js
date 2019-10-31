@@ -2,7 +2,7 @@
 import Product from '../../models/Product'
 import connectDb from '../../utils/connectDb'
 
-connectDb()
+// connectDb()
 
 export default async (req, res) => {
   // req => method 

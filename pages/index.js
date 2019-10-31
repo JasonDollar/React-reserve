@@ -1,23 +1,12 @@
 import React, { useEffect } from 'react'
 import axios from 'axios'
 import PropTypes from 'prop-types'
+import ProductList from '../components/Index/ProductList'
 
 
-const Home = ({ products }) => {
-  // useEffect(() => {
-  //   getProducts()
-  // }, [])
-
-  // const getProducts = async () => {
-  //   const res = await axios.get('http://localhost:3000/api/products')
-  //   console.log(res.data)
-  // } 
-  console.log(products.length)
-
-  return (
-    <>home</>
-  )
-}
+const Home = ({ products }) => (
+  <ProductList products={products} />
+)
 
 Home.getInitialProps = async () => {
   const res = await axios.get('http://localhost:3000/api/products')
