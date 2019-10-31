@@ -11,7 +11,7 @@ const ProductList = ({ products }) => {
     color: 'teal',
     fluid: true,
     childKey: item._id,
-    href: `/products?_id=${item._id}`,
+    href: `/product?_id=${item._id}`,
   }))
 
   return (
