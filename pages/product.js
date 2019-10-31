@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 
 import ProductSummary from '../components/Product/ProductSummary'
 import ProductAttributes from '../components/Product/ProductAttributes'
+import baseUrl from '../utils/baseUrl'
 
 const Product = ({ product }) => (
   <>
@@ -13,7 +14,7 @@ const Product = ({ product }) => (
 )
 
 Product.getInitialProps = async ({ query: { _id } }) => {
-  const url = 'http://localhost:3000/api/product'
+  const url = `${baseUrl}/api/product`
   // params  instead of using query in url
   const payload = { params: { _id } }
   const res = await axios.get(url, payload)

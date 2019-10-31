@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import axios from 'axios'
 import PropTypes from 'prop-types'
 import ProductList from '../components/Index/ProductList'
+import baseUrl from '../utils/baseUrl'
 
 
 const Home = ({ products }) => (
@@ -9,7 +10,7 @@ const Home = ({ products }) => (
 )
 
 Home.getInitialProps = async () => {
-  const res = await axios.get('http://localhost:3000/api/products')
+  const res = await axios.get(`${baseUrl}/api/products`)
   return { products: res.data.products }
 }
 
