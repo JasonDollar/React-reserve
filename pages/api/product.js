@@ -31,10 +31,33 @@ const handleDeleteRequest = async (req, res) => {
   }
 }
 
+const handlePostRequest = async (req, res) => {
+  try {
+    const { 
+      name, price, description, mediaUrl, 
+    } = req.body
+    if (!name || !price || !description || !mediaUrl) {
+      // 422 - user did not set all information required to complete this request
+      return res.status(422).send('Product missing one or more fields')
+    }
+    const product = new Product({ 
+      name, price, description, mediaUrl, 
+    })
+    await product.save()
+    res.status(201).json({ product })
+
+  } catch (e) {
+    res.status(500).json({ message: 'error' })
+  }
+}
+
 export default async (req, res) => {
   switch (req.method) {
     case 'GET':
       await handleGetRequest(req, res)
+      break
+    case 'POST': 
+      await handlePostRequest(req, res)
       break
     case 'DELETE':
       await handleDeleteRequest(req, res)
