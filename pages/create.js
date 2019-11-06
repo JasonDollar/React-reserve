@@ -56,6 +56,7 @@ const CreateProduct = () => {
     try {
       e.preventDefault()
       setLoading(true)
+      setError('')
       const mediaUrl = await handleImageUpload()
   
       const url = `${baseUrl}/api/product`
@@ -66,7 +67,7 @@ const CreateProduct = () => {
       setSubmitSuccess(true)
       
     } catch (error) {
-      console.error(error)
+      // console.error(error)
       catchErrors(error, setError)
     } finally {
 
