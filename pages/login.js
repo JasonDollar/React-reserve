@@ -37,7 +37,8 @@ const Login = () => {
       const url = `${baseUrl}/api/login`
       const payload = { ...user }
       const res = await axios.post(url, payload)
-      handleLogin(res)
+      handleLogin(res.data)
+      
     } catch (error) {
       catchErrors(error, setError)
     } finally {
