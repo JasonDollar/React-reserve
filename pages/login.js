@@ -6,6 +6,7 @@ import Link from 'next/link'
 import axios from 'axios'
 import catchErrors from '../utils/catchErrors'
 import baseUrl from '../utils/baseUrl'
+import { handleLogin } from '../utils/auth'
 
 const INIT_USER = {
   email: '',
@@ -33,6 +34,10 @@ const Login = () => {
     try {
       setLoading(true)
       setError('')
+      const url = `${baseUrl}/api/login`
+      const payload = { ...user }
+      const res = await axios.post(url, payload)
+      handleLogin(res)
     } catch (error) {
       catchErrors(error, setError)
     } finally {
