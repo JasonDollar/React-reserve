@@ -51,7 +51,7 @@ const Signup = () => {
     <>
       <Message attached icon="setting" header="Get Started!" content="Create a new account" color="teal" />
       <Form onSubmit={handleSubmit} error={Boolean(error)}>
-        <Message error header="Oops!" content={error.message} />
+        <Message error header="Oops!" content={error} />
         <Segment>
           <Form.Input fluid icon="user" iconPosition="left" label="Name" placeholder="Name" name="name" value={user.name} onChange={handleChange} />
           <Form.Input fluid icon="envelope" iconPosition="left" label="Email" placeholder="Email" name="email" type="email" value={user.email} onChange={handleChange} />

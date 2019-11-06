@@ -45,7 +45,7 @@ const Login = () => {
     <>
       <Message attached icon="privacy" header="Welcome Back!" content="Login with email and password" color="blue" />
       <Form onSubmit={handleSubmit} error={Boolean(error)}>
-        <Message error header="Oops!" content={error.message} />
+        <Message error header="Oops!" content={error} />
         <Segment>
           <Form.Input fluid icon="envelope" iconPosition="left" label="Email" placeholder="Email" name="email" type="email" value={user.email} onChange={handleChange} />
           <Form.Input fluid icon="lock" iconPosition="left" label="Password" placeholder="Password" name="password" type="password" value={user.password} onChange={handleChange} />
