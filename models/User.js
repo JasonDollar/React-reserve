@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 import validator from 'validator'
-import bcrypt from 'bcryptjs'
+// import bcrypt from 'bcryptjs'
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -11,7 +11,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     unique: true,
-    validate: val => validator.isEmail(val),
+    // validate: val => validator.isEmail(val),
   },
   password: {
     type: String,
@@ -28,9 +28,9 @@ const userSchema = new mongoose.Schema({
   timestamps: true,
 })
 
-userSchema.pre('save', function (next) {
-  next()
-})
+// userSchema.pre('save', function (next) {
+//   next()
+// })
 
 const User = mongoose.models.User || mongoose.model('User', userSchema)
 
